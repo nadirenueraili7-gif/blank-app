@@ -19,7 +19,7 @@ st.set_page_config(
 # =========================
 # Load Model
 # =========================
-MODEL_PATH = "model.pkl"
+MODEL_PATH = "heloc_model.joblib"
 
 @st.cache_resource
 def load_model(path: str):
