@@ -9,6 +9,7 @@ import pickle
 import numpy as np
 import pandas as pd
 import streamlit as st
+import joblib
 
 st.set_page_config(
     page_title="HELOC Decision Support System", 
@@ -26,9 +27,7 @@ def load_model(path: str):
     if not os.path.exists(path):
         st.warning("⚠️ Model file not found. Using demo mode.")
         return None
-    with open(path, "rb") as f:
-        return pickle.load(f)
-
+    return joblib.load(path)
 model = load_model(MODEL_PATH)
 
 FEATURE_COLUMNS = [
